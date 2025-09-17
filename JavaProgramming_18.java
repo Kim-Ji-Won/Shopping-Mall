@@ -8,7 +8,7 @@ public class JavaProgramming_18 {
 
         System.out.println("10명 학생의 학번과 점수 입력");
 
-        int grade [] = new int [10]; //크기 10인 학번 배열 생성
+        int grade [] = new int [10];
         int score [] = new int [10]; //크기 10인 학점 배열 생성
 
 
