@@ -28,7 +28,11 @@
             <ul>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-circle-info"></i></a></li>
+
                 <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+
+                <li><a href="shoppingCart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+
             </ul>
         </nav>
 
@@ -62,22 +66,38 @@
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="outer">
                 <p class="price">10,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품1" data-price="10000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="top">
                 <p class="price">20,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품2" data-price="20000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="bottom">
                 <p class="price">30,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품3" data-price="30000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="acc/bag">
                 <p class="price">5,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품4" data-price="5000">장바구니</button>
+
             </article>
          </section>
 
@@ -87,22 +107,38 @@
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="outer">
                 <p class="price">10,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품5" data-price="10000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="top">
                 <p class="price">20,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품6" data-price="20000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="bottom">
                 <p class="price">30,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품7" data-price="30000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="acc/bag">
                 <p class="price">5,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품8" data-price="5000">장바구니</button>
+
             </article>
          </section>
 
@@ -112,22 +148,38 @@
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="outer">
                 <p class="price">10,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품9" data-price="10000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="top">
                 <p class="price">20,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품10" data-price="20000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="bottom">
                 <p class="price">30,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품11" data-price="30000">장바구니</button>
+
             </article>
             <article>
                 <img src="https://via.placeholder.com/300x300.png?text=상품+이미지" alt="acc/bag">
                 <p class="price">5,000원</p>
+
                 <button>장바구니</button>
+
+                <button class = "add-cart" data-name="상품12" data-price="5000">장바구니</button>
+
             </article>
          </section>
     </main>
@@ -144,5 +196,27 @@
             navMenu.classList.toggle('active');    
         });
     </script>
+
+
+    <script>
+        const addButtons = document.querySelectorAll('.add-cart');
+
+        for(let i = 0; i < addButtons.length; i++) {
+            addButtons[i].addEventListener('click', function() {
+
+                const name = this.dataset.name;
+                const price = parseInt(this.dataset.price);
+
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                cart.push({ name: name, price: price });
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert(name + ' ' + price + '원 장바구니에 담겼습니다!');
+            })
+        }
+    </script>
+
 </body>
 </html>

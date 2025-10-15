@@ -6,7 +6,11 @@ body {
 
 header {
     display: flex;
+
     gap: 20px;
+
+    justify-content: space-between;
+
     align-items: center;
     padding: 20px;
     background-color: #333;
@@ -158,6 +162,7 @@ nav {
 
 main {
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     gap: 40px;
@@ -204,11 +209,38 @@ h2 {
     color: #e67e22;
 } 
 .NEWARRIVAL article button, .WEEKLYBESTITEM article button, .BESTSELLER article button {
+
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+}
+
+.product .price {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+button {
+
     background-color: #3498db;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+
     margin-top: 10px;
 }
 
@@ -220,6 +252,7 @@ h2 {
 .WEEKLYBESTITEM + .BESTSELLER {
 border-top: 2px solid #ccc;
     padding-top: 40px;
+
 }
 
 footer {
